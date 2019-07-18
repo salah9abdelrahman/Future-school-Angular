@@ -1,0 +1,45 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="card">
+    <div class="card-header"> 
+      <h1 style="color: darkgoldenrod;">New exam</h1>
+      <span class="bg-danger"> </span>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12 " >
+         <h1 >Mr: {{FullName()}}</h1>  <br><br>
+          <label style="color: steelblue;">choose course</label><span style="margin-left: 10px;"></span>
+          <select #inputCourse>
+              
+              <option disabled>choose course</option>
+
+        <option *ngFor="let course of this._attendenceService.courses">{{course.Name}}</option>
+          </select><br><br>
+          <label for="" style="color: steelblue;">choose Exam Type</label><span style="margin-left: 10px;"></span>
+          <select #inputExamType>
+              <option disabled>Choose exam type</option>
+              <option >Quiz 1</option>
+              <option >Quiz 2</option>
+              <option >Mid-Term</option>
+              <option >Final</option>
+            </select> <br><br>
+            <label for="" style="color: steelblue;" >Exam's max degree</label><span style="margin-left: 10px;"></span>
+          <input #inputDegree type="number"><br><br><br>
+          <button (click)="this._examsService.CreateExam(inputCourse.value, inputExamType.value, inputDegree.value)" class="btn btn-primary mb-2 " style="margin-left: 100px;">Create</button>
+      </div> 
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+
+    <a routerLink="/staffevaluate" type="submit" style="width: 150px;margin-top: 50px;margin-left: 350px;" class="btn btn-danger mb-2 ">Back To Evaluation</a>
+
+  </div>
+  </div>
+  </div>
+</div>
+<br><br>
+
+
+
+
+
+

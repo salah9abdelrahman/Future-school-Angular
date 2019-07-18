@@ -1,0 +1,268 @@
+  <h1 style="margin-left:400px;color:#434F65; font:bold;">Admin Page</h1><br /><br /><br />
+                   <h2 style="color: darkgoldenrod;margin-left: 50px;;font:bolder;font:italic;">Adding Data</h2> 
+                 <br>
+                   <div style="margin-left: 100px;">
+                      <button  class="btn btn-primary" data-toggle="modal" data-target="#addlevel">Add level</button>                           
+                      <div class="modal fade" id="addlevel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color:royalblue;">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>                 
+                              <h2 class="text-center m-auto" style="color: white;">ADD New level</h2>  
+                              
+                            </div>
+                              <div class="modal-body ">
+                                  <form class="py-1">
+                                      <div class="form-group">
+                                        <label class="col-form-label" for="levelname"> level name</label>
+                                        <input #levelname1 name="" type="text" class="form-control"  placeholder="Enter level Name">
+                                      </div>
+                                      <button (click)="this._adminService.CreateLevel(levelname1.value)" class="btn btn-primary">Add</button>
+                                    </form>  
+                              </div>
+                              </div>                              
+                            </div>
+                         </div>
+                  
+                   
+                   <span style="margin-left: 20px;"></span>
+                   <button  class="btn btn-primary" data-toggle="modal" data-target="#addcourse">Add Course</button>
+                   <div class="modal fade" id="addcourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header" style="background-color:steelblue;">
+                            
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button> 
+                            <h2 class="text-center m-auto" style="color: white;">ADD New Course </h2>
+
+                          </div>
+                           <div class="modal-body ">
+                               <form class="py-1">
+                                   <div class="form-group">
+                                     <label class="col-form-label" > Course name</label>
+                                     <input #coursename1  type="text" class="form-control"  placeholder="Enter Course Name">
+                                  <label>Level Name</label>
+                                     <select  #levelname3 >
+                                       <option *ngFor="let item of  this._adminService.levels" >{{item.Name}}</option>
+                                   </select>
+                                   </div>
+                                  
+                                   <button (click)="this._adminService.CreateCourse(coursename1.value,levelname3.value)" class="btn btn-primary">Add</button>
+                                 </form>  
+                           </div>
+                           </div>
+                           
+                         </div>
+                       </div>
+
+                       <span style="margin-left: 20px;"></span>
+
+                       <button  class="btn btn-primary" data-toggle="modal" data-target="#addclass">Add Class</button>
+                        
+                       <div class="modal fade" id="addclass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                           <div class="modal-dialog" role="document">
+                             <div class="modal-content">
+                               <div class="modal-header" style="background-color: steelblue;">
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2 class="text-center m-auto" style="color: white;">ADD New Class </h2>
+
+                              </div>
+                               <div class="modal-body ">
+                                   <form class="py-1">
+                                       <div class="form-group">
+                                         <label class="col-form-label" for="classname"> Class name</label>
+                                         <input #classname name="" type="text" class="form-control"  placeholder="Enter class Name">
+                                      <label>Level Name</label>
+                                         <select  #levelname9>
+                                          <option *ngFor="let item of  this._adminService.levels">{{item.Name}}</option>
+                                       </select>
+                                   </div>
+                                       <button  (click)="this._adminService.CreateClass(classname.value,levelname9.value)" class="btn btn-primary">Add</button>
+                                     </form>  
+                               </div>
+                               </div>
+                               
+                             </div>
+                           </div>
+
+                           <span style="margin-left: 20px;"></span>
+
+
+                    <button  class="btn btn-primary" data-toggle="modal" data-target="#addstudent">Add Student</button>
+                    <div class="modal fade" id="addstudent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header" style="background-color: steelblue;">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                  <h2 class="text-center m-auto" style="color: white;">ADD New Student</h2>
+                                </div>
+                          <div class="modal-body ">
+                            <app-student-register></app-student-register>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                  <span style="margin-left: 20px;"></span>
+                     <button  class="btn btn-primary" data-toggle="modal" data-target="#addteacher">Add teacher</button>
+       
+        <div class="modal fade" id="addteacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: steelblue;">
+                  
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="text-center m-auto" style="color: white;">ADD New Teacher</h2>
+                </div>
+                <div class="modal-body ">
+                    <form class="py-1" [formGroup]="this._adminService.teacherRegister">
+                        <div class="form-group">
+                          <label class="col-form-label"  for="ssn"> SSN</label>
+                          <input  formControlName="ssn" type="text" class="form-control" placeholder="Enter teacher ID">
+                          <div *ngIf="this._adminService.teacherRegister.get('ssn').invalid && this._adminService.teacherRegister.get('ssn').touched" class="alert alert-danger">
+                            <div *ngIf="this._adminService.teacherRegister.controls.ssn.errors.required">required</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.ssn.errors.minlength"> minLength is 10 charcter</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.ssn.errors.pattern">  must contain numbers only</div>
+                          </div>
+
+                        </div>
+                        <div class="form-group">
+                          <label class="col-form-label" for="LName"> First Name</label>
+                          <input  formControlName="LName" type="text" class="form-control"  placeholder="Enter Teacher First Name">
+                          <div
+                            *ngIf="this._adminService.teacherRegister.get('LName').invalid && this._adminService.teacherRegister.get('LName').touched"
+                            class="alert alert-danger">
+                            <div *ngIf="this._adminService.teacherRegister.controls.LName.errors.required">required</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.LName.errors.pattern">  must be contain alphabetic only
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <label class="col-form-label" for="FName"> Last Name</label>
+                          <input formControlName="FName" type="text" class="form-control" placeholder="Enter Teacher Last Name">
+                          <div
+                            *ngIf="this._adminService.teacherRegister.get('FName').invalid && this._adminService.teacherRegister.get('FName').touched"
+                            class="alert alert-danger">
+                            <div *ngIf="this._adminService.teacherRegister.controls.FName.errors.required">required</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.FName.errors.pattern">must be contain alphabetic only
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-form-label" for="Email"> Email</label>
+                          <input formControlName="Email" type="email" class="form-control" placeholder="Enter Email">
+                          <div
+                            *ngIf="this._adminService.teacherRegister.get('Email').invalid && this._adminService.teacherRegister.get('Email').touched"
+                            class="alert alert-danger">
+                            <div *ngIf="this._adminService.teacherRegister.controls.Email.errors.required">required</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.Email.errors.email">non valid email
+                            </div>
+                          </div>
+                          
+                         
+                          
+
+
+                        </div>
+                        <div class="form-group">
+                          <label class="col-form-label" for="Password"> Password</label>
+                          <input  formControlName="Password" type="password" class="form-control"  placeholder="Enter password">
+                          <div
+                            *ngIf="this._adminService.teacherRegister.get('Password').invalid && this._adminService.teacherRegister.get('Password').touched"
+                            class="alert alert-danger">
+                            <div *ngIf="this._adminService.teacherRegister.controls.Password.errors.required">required</div>
+                            <div *ngIf="this._adminService.teacherRegister.controls.Password.errors.minlength">min 5 charcter
+                            </div>
+                          </div>
+                        </div>
+                            
+
+                        <div class="form-group">
+                          <label class="col-form-label" for="gender">Gender</label>
+                          <select  formControlName="Gender" class="form-control"  >
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="age"> Age</label>
+                            <input formControlName="Age" type="number" class="form-control"  placeholder="Enter Age">
+                          </div>
+                        <div class="form-group">
+                          <label class="col-form-label" for="city">City</label>
+                          <input  formControlName="City" type="text" class="form-control"  placeholder=" Enter city">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="street">Street</label>
+                            <input  formControlName="Street" type="text" class="form-control"  placeholder=" Enter street">
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label" for="phone">Phone</label>
+                            <input  formControlName="Phone" type="text" class="form-control"  placeholder=" Enter phone">
+                            <div
+                              *ngIf="this._adminService.teacherRegister.get('Phone').invalid && this._adminService.teacherRegister.get('Phone').touched"
+                              class="alert alert-danger">
+                              <div *ngIf="this._adminService.teacherRegister.controls.Phone.errors.required">required</div>
+                              <div *ngIf="this._adminService.teacherRegister.controls.Phone.errors.pattern">not valid
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label">CourseName</label>
+                            <select formControlName="CourseName" class="form-control" multiple>
+                              <option *ngFor="let item of this._adminService.courses" >{{item.Name}}</option>
+                             
+                            </select>
+                            <!-- <div
+                              *ngIf="this._adminService.teacherRegister.get('CourseName').invalid && this._adminService.teacherRegister.get('CourseName').touched"
+                              class="alert alert-danger">
+                              <div *ngIf="this._adminService.teacherRegister.controls.CourseName.errors.required">required</div>
+                              </div>
+                            </div> -->
+                          </div>
+                        <button (click)="this._adminService.register()"  [disabled]="!this._adminService.teacherRegister.valid"  class="btn btn-primary">Add</button>
+                      </form>  
+                </div>
+                </div>
+                
+              </div>
+            </div>
+     
+                   </div>
+                        <br><br>
+                  
+                   <h2 style="color: darkgoldenrod;margin-left: 50px;;font:bolder;font:italic;">Modified Data</h2> 
+   <br>
+                   <app-admin-update></app-admin-update>
+
+
+    <!-- <app-admin-teacher-edit></app-admin-teacher-edit> -->
+<br><br><br>
+    <h2 style="color: darkgoldenrod;margin-left: 50px;;font:bolder;font:italic;">Show Data</h2> 
+    <a class="btn btn-warning" routerLink="/showdata" role="button" style="margin-left: 100px;">Click Here To Show Data</a>
+
+   <br><br><br>
+
+        
+  
+       
+       
+   

@@ -1,0 +1,33 @@
+<div id="loginn" style="margin-top:200px; height:40%;">
+    <div class="modal-dialog modal-login " >
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar">
+                    <img src="../assets/img/download (1).png" alt="picture">
+                </div>
+                <h4 class="modal-title" style="color:#F4CF01 ">Member Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form  method="post">
+                      <!-- action="/examples/actions/confirmation.php" -->
+                    <div class="form-group">
+                        <input #inputSNN type="text" class="form-control" name="username" placeholder="SNN" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input #inputPassword type="password" class="form-control" name="password" placeholder="Password" required="required">
+                    </div>
+                    <div class="form-group">
+                        <a type="submit" class="btn btn-primary btn-lg btn-block login-btn" 
+                        (click)="this._service.Login(inputSNN.value, inputPassword.value)">Login</a>
+            <!-- <a routerLink="/admin" type="submit"
+                 class="btn btn-primary btn-lg btn-block login-btn">Login</a> -->
+                    </div>
+                </form>
+            </div>
+  
+  
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,125 @@
+<div style="margin-left: 100px;">
+  <button class="btn btn-success" data-toggle="modal" data-target="#updateLevelorDelete">update Level</button>
+  <div class="modal fade" id="updateLevelorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#4BB543;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2 class="text-center m-auto">Update Or Delete  level</h2>
+        </div>
+        <div class="modal-body ">
+          <form class="py-1">
+            <div class="form-group">
+              <label class="col-form-label" for="levelname"> level name</label><span style="margin-left: 10px;"></span>
+              <select #levelname3>
+                <option *ngFor="let item of  this._adminService.levels">{{item.Name}}</option>
+              </select>
+            </div>
+
+            <input  [value]="levelname3.value"  #newName type="text" class="form-control" placeholder="Enter level"><br>
+            <button (click)="this._adminService.updateLevelName(newName.value,levelname3.value)" class="btn btn-success">Update</button><span style="margin-left: 20px;"></span>
+            <button (click)="this._adminService.deleteLevel(levelname3.value)" class="btn btn-danger">Remove</button>
+         
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<span style="margin-left: 20px;"></span>
+
+
+
+ 
+    <button class="btn btn-success" data-toggle="modal" data-target="#updateCourseorDelete">Update Courses</button>
+    <div class="modal fade" id="updateCourseorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:#4BB543;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 class="text-center m-auto">Udate Or Delete course</h2>
+
+          </div>
+          <div class="modal-body ">
+            <form class="py-1">
+              <div class="form-group">
+                <label class="col-form-label" for="levelname"> course Name</label>
+               <span style="margin-left: 10px;"></span>
+               
+                <select #coursename3>
+                  <option *ngFor="let item of  this._adminService.courses">{{item.Name}}</option>
+                </select>
+              </div>
+  
+              <input #newName2 type="text" class="form-control" placeholder=" Enter street">
+              <br>
+              <button (click)="this._adminService.updateCourse(newName2.value,coursename3.value)"
+                class="btn btn-success">Update</button>
+                <span style="margin-left: 20px;"></span>
+
+                <button (click)="this._adminService.deleteCourse(coursename3.value)" class="btn btn-danger">Remove</button>           
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <span style="margin-left: 20px;"></span>
+
+
+
+
+      <button class="btn btn-success" data-toggle="modal" data-target="#updateClassRoomorDelete">Update classRooms</button>
+      <div class="modal fade" id="updateClassRoomorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color:#4BB543;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              <h2 class="text-center m-auto">Udate Or Delete ClassRoom</h2>
+            
+            </div>
+            <div class="modal-body ">
+              <form class="py-1">
+                <div class="form-group">
+                  <label class="col-form-label" for="levelname"> ClassRoomName Name</label>
+                  <span style="margin-left: 10px;"></span>
+                  <select #classRoomName3>
+                    <option *ngFor="let item of  this._adminService.classrooms">{{item.Name}}</option>
+                  </select>
+                </div>
+    
+                <input #newName3 type="text" class="form-control" placeholder=" Enter Class name"><br>
+                <button (click)="this._adminService.updateClassRoom(newName3.value,classRoomName3.value)"
+                  class="btn btn-success">Update</button><span style="margin-left: 20px;"></span>
+                  <button (click)="this._adminService.deleteClassRoom(classRoomName3.value)" class="btn btn-danger">Remove</button>
+              
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      

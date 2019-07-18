@@ -1,0 +1,50 @@
+<div class="container" style="margin-bottom: 150px; margin-top: 100px;">
+    <div class="card">
+      <div class="card-header">
+        <h1 style="color: darkgoldenrod;">Show Attandance</h1>
+        <span class="bg-danger"> </span>
+      </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Student name : {{this._showattendService.student.FName +
+          ' ' + this._showattendService.student.LName}}</h1>
+          <h3 >Student ssn: {{this._showattendService.student.StudentSNN}}</h3>
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <!-- <th>Student Name</th> -->
+            <th>Teacher Name</th>
+            <th>Course Name</th>
+            <th>Is attended</th>
+            <th>Date</th>
+            <!-- <th> No.Attandance</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let att of this._showattendService.attends">
+            <td>{{att.TeacherName}}</td>
+            <td>{{att.CourseName}}</td>
+            <td>{{this._showattendService.AttebdOrNot(att.IsAttended)}}</td>
+            <!-- <td>{{{{ att.SessionDate | date }}}}</td>
+            -->
+            <td>{{att.SessionDate| date:'medium'}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a routerLink="/parent" type="submit" style="width: 150px;margin-top: 100px;margin-left: 350px;" class="btn btn-danger mb-2 ">
+        Back To Evaluation </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+

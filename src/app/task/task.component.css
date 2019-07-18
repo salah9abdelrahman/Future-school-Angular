@@ -1,0 +1,6 @@
+.done-task{
+    text-decoration-line: line-through;
+}
+*{
+    overflow: hidden;
+}

@@ -1,0 +1,134 @@
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#updateTeacher">Update teacher</button>
+<div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h2 class="text-center m-auto">Update Teacher</h2>
+
+      </div>
+      <div class="modal-body ">
+        <form class="py-1" [formGroup]="this._updateTeacherService.teacherUpdate">
+          <div class="form-group">
+            <label class="col-form-label" for="ssn"> SSN</label>
+            <input value="{{this._updateTeacherService.teacher.TeacherSNN}}" formControlName="ssn" type="text" class="form-control" placeholder="Enter teacher ID">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('ssn').invalid && this._updateTeacherService.teacherUpdate.get('ssn').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.ssn.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.ssn.errors.minlength"> minLength is 10 charcter
+              </div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.ssn.errors.pattern"> must contain numbers only
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="LName"> First Name</label>
+            <input value="{{this._updateTeacherService.teacher.LName}}" formControlName="LName" type="text" class="form-control" placeholder="Enter Teacher First Name">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('LName').invalid && this._updateTeacherService.teacherUpdate.get('LName').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.LName.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.LName.errors.pattern"> must be contain alphabetic
+                only
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="col-form-label" for="FName"> Last Name</label>
+            <input value="{{this._updateTeacherService.teacher.FName}}" formControlName="FName" type="text" class="form-control" placeholder="Enter Teacher Last Name">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('FName').invalid && this._updateTeacherService.teacherUpdate.get('FName').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.FName.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.FName.errors.pattern">must be contain alphabetic
+                only
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-form-label" for="Email"> Email</label>
+            <input value="{{this._updateTeacherService.teacher.Email}}" formControlName="Email" type="email" class="form-control" placeholder="Enter Email">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('Email').invalid && this._updateTeacherService.teacherUpdate.get('Email').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Email.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Email.errors.email">non valid email
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="Password"> Password</label>
+            <input value="{{this._updateTeacherService.teacher.Password}}" formControlName="Password" type="password" class="form-control" placeholder="Enter password">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('Password').invalid && this._updateTeacherService.teacherUpdate.get('Password').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Password.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Password.errors.minlength">min 5 charcter
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-form-label" for="gender">Gender</label>
+            <select value="{{this._updateTeacherService.teacher.Gender}}" formControlName="Gender" class="form-control">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="age"> Age</label>
+            <input value="{{this._updateTeacherService.teacher.Age}}" formControlName="Age" type="number" class="form-control" placeholder="Enter Age">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="city">City</label>
+            <input value="{{this._updateTeacherService.teacher.City}}" formControlName="City" type="text" class="form-control" placeholder=" Enter city">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="street">Street</label>
+            <input value="{{this._updateTeacherService.teacher.Street}}" formControlName="Street" type="text" class="form-control" placeholder=" Enter street">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="phone">Phone</label>
+            <input value="{{this._updateTeacherService.teacher.Phone}}" formControlName="Phone" type="text" class="form-control" placeholder=" Enter phone">
+            <div
+              *ngIf="this._updateTeacherService.teacherUpdate.get('Phone').invalid && this._updateTeacherService.teacherUpdate.get('Phone').touched"
+              class="alert alert-danger">
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Phone.errors.required">required</div>
+              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.Phone.errors.pattern">not valid
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label">CourseName</label>
+            <select value="{{this._updateTeacherService.teacher.CourseName}}" formControlName="CourseName" class="form-control" multiple>
+              <option *ngFor="let item of this._updateTeacherService.courses">{{item.Name}}</option>
+
+            </select>
+            <!-- <div
+                              *ngIf="this._updateTeacherService.teacherUpdate.get('CourseName').invalid && this._updateTeacherService.teacherUpdate.get('CourseName').touched"
+                              class="alert alert-danger">
+                              <div *ngIf="this._updateTeacherService.teacherUpdate.controls.CourseName.errors.required">required</div>
+                              </div>
+                            </div> -->
+          </div>
+          <button (click)="this._updateTeacherService.register()" [disabled]="!this._updateTeacherService.teacherUpdate.valid"
+            class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
